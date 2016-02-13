@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"os"
 
-	"code.google.com/p/gopass"
 	"github.com/atotto/clipboard"
+	"github.com/mewbak/gopass"
 )
 
 var (

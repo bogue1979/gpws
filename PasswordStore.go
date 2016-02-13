@@ -8,7 +8,7 @@ import (
 	"io"
 	"os"
 
-	"code.google.com/p/gopass"
+	"github.com/mewbak/gopass"
 )
 
 type PasswordStore struct {
