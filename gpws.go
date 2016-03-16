@@ -12,13 +12,13 @@ import (
 )
 
 var (
-	StoreFile           = flag.String("file", defaultStoreFile, "Password Store File")
-	del                 = flag.String("delete", "", "delete Entry")
-	update              = flag.String("update", "", "update Entry")
-	add                 = flag.String("add", "", "add Password Entry")
-	home         string = os.Getenv("HOME")
-	storeDir     string = home + "/.gpws"
-	helpdocument string = `
+	storeFile    = flag.String("file", defaultStoreFile, "Password Store File")
+	del          = flag.String("delete", "", "delete Entry")
+	update       = flag.String("update", "", "update Entry")
+	add          = flag.String("add", "", "add Password Entry")
+	home         = os.Getenv("HOME")
+	storeDir     = home + "/.gpws"
+	helpdocument = `
 Examples:
 List Entries:
 gpws
@@ -153,8 +153,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	s := NewPasswordStore(storeDir + "/" + *StoreFile)
-	defer s.Save(storeDir + "/" + *StoreFile)
+	s := NewPasswordStore(storeDir + "/" + *storeFile)
+	defer s.Save(storeDir + "/" + *storeFile)
 
 	// check password
 	selfentry, err := s.Get("self")
